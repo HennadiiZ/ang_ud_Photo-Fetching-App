@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PhotosService } from '../photos.service';
 
 @Component({
   selector: 'app-photo-show',
@@ -7,15 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhotoShowComponent implements OnInit {
 
-  constructor() { }
+  photoInfo!: any;
+
+  constructor(private photosService: PhotosService) { }
 
   ngOnInit(): void {
+    this.photosService.getPhotos().subscribe(data=>{
+      console.log(data);
+      // console.log(data.urls.regular); // does not work;
+      this.photoInfo = data;
+      console.log(this.photoInfo.urls.regular);
+    })
   }
 
-  // https://unsplash.com/
-  // https://unsplash.com/developers
-  
-  // --------// Section 17: Exercise! A Photo-Fetching App
-  // 212. App Overview + 213. App Architecture Design + 214. API Signup
-  //
 }
