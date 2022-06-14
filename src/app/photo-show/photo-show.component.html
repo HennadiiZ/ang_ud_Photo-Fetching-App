@@ -1,8 +1,9 @@
-<p>photo-show works!</p>
+
+<button (click)="fetchImage()">Fetch new image</button> <br>
 <!-- <p>{{ photoInfo?.id }}</p>
 <p>{{ photoInfo?.urls?.raw }}</p> -->
 <!-- <img src="{{ photoInfo?.urls?.raw }}"> -->
 <!-- <img [src]= photoInfo?.urls?.raw style="width:400px"> -->
-<img [src]= "photoInfo?.urls?.regular" style="width:400px">
+<img [src]= "photoInfo?.urls?.regular" style="width:400px" *ngIf="photoInfo"> <br>
 <p>////:</p>
-<img [src]= "photoUrl" style="width:400px">
+<img [src]= "photoUrl" style="width:400px" *ngIf="photoUrl">

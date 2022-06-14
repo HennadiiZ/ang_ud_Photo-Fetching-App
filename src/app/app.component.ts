@@ -21,4 +21,5 @@ export class AppComponent {
   // 219. Making the Request
   // 220. Using a Generic Type
   // 221. Displaying the Image
+  // 222. Refetching Data
 }
