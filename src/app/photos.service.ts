@@ -1,6 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { filter, map } from 'rxjs';
+import { filter, map, Observable } from 'rxjs';
+
+interface UnsplashResponse {
+  urls: {
+    regular: string
+  }
+}
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +29,7 @@ export class PhotosService {
 
     // return  this.http.get(this.root + this.accessKey) // [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}] - array of these random objects
 
-    return  this.http.get(this.randomPhoto, {
+    return  this.http.get<UnsplashResponse>(this.randomPhoto, {
       headers: {
         Authorization: `Client-ID ${this.accessKey}`
       }

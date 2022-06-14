@@ -1,6 +1,8 @@
 <p>photo-show works!</p>
-<p>{{ photoInfo?.id }}</p>
-<p>{{ photoInfo?.urls?.raw }}</p>
+<!-- <p>{{ photoInfo?.id }}</p>
+<p>{{ photoInfo?.urls?.raw }}</p> -->
 <!-- <img src="{{ photoInfo?.urls?.raw }}"> -->
-<img [src]= photoInfo?.urls?.raw style="width:400px">
-<img [src]= photoInfo?.urls?.regular>
+<!-- <img [src]= photoInfo?.urls?.raw style="width:400px"> -->
+<img [src]= "photoInfo?.urls?.regular" style="width:400px">
+<p>////:</p>
+<img [src]= "photoUrl" style="width:400px">

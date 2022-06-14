@@ -19,5 +19,6 @@ export class AppComponent {
   // 217. Making the Request
   // 218. Displaying the Component
   // 219. Making the Request
-  //
+  // 220. Using a Generic Type
+  // 221. Displaying the Image
 }

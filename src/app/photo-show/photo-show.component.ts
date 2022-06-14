@@ -9,15 +9,18 @@ import { PhotosService } from '../photos.service';
 export class PhotoShowComponent implements OnInit {
 
   photoInfo!: any;
+  photoUrl!: string;
 
   constructor(private photosService: PhotosService) { }
 
   ngOnInit(): void {
     this.photosService.getPhotos().subscribe(data=>{
       console.log(data);
-      // console.log(data.urls.regular); // does not work;
+      console.log(data.urls.regular); // now works fine!;
       this.photoInfo = data;
       console.log(this.photoInfo.urls.regular);
+
+      this.photoUrl = data.urls.regular;
     })
   }
 
